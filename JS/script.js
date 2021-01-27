@@ -28,10 +28,11 @@ function coffeeTemplate(coffee){
     let myReturn = "";
 
 
-    myReturn=`
+    myReturn =
+    `
     <p>
     <img src="${coffee.pic}" alt="Our ${coffee.alt}" id="coffee" />
-    <strong id= "coffee-highlight" class="feature">${coffee.day}'s Coffee Special:</strong> ${coffee.day}'s daily coffee special is <strong>${coffee.name}</strong>,
+    <strong id= "coffeeHighlight" class="feature">${coffee.day}'s Coffee Special:</strong> ${coffee.day}'s daily coffee special is <strong id= "coffeeHighlight">${coffee.name}</strong>,
     ${coffee.desc}
     </p>
     `;
@@ -52,6 +53,7 @@ switch(myDay){
             desc: `I love bubble tea!`
         };
         break;
+
     case 2:
         today = "Tuesday";
         coffee = {
@@ -60,61 +62,67 @@ switch(myDay){
             pic: "Images/caramel-latte.jpg",
             alt: "A pic of caramel-latte",
             day: "Tuesday",
-            desc: `Great scott!, it's Caramel latte day!`
+            desc: `it's Caramel latte day!`
         };
         break;
+
     case 3:
-        today = "Wenesday";
+        today = "Wednesday";
         coffee = {
-            color: "brown",
-            name: "Drip",
-            pic: "Images/drip.jpg",
-            alt: "A pic of drip Coffee",
+            color: "Blue",
+            name: "Cold Brew",
+            pic: "Images/cold-bew.jpg",
+            alt: "A pic of cold brew",
             day: "Wednesday",
-            desc: `Some days you just need the drip!`
+            desc: `you need something stronger!`
         };
         break;
     
     case 4:
         today = "Thursday";
         coffee = {
-            color: "Pink",
-            name: "Bubble Tea",
-            pic: "Images/bubble-tea.jpg",
-            alt: "A pic of bubble tea",
-            day: "Monday",
-            desc: `Some days you just need the bubble tea!`
+            color: "Purple",
+            name: "Frappaccino",
+            pic: "Images/frappacino.jpg",
+            alt: "A pic of a frappacino",
+            day: "Thursday",
+            desc: `spoil yourself! Thirsty Thursday`
         };
         break;
+
     case 5:
         today = "Friday";
         coffee = {
-            color: "yellow",
-            name: "Caramel Latte",
-            pic: "Images/caramel-latte.jpg",
-            alt: "A pic of caramel-latte",
-            desc: `Great scott!, it's Caramel latte day!`
+            color: "Green",
+            name: "Mocha",
+            pic: "Images/mocha.jpg",
+            alt: "A pic of mocha",
+            day: "Friday",
+            desc: `its Fri-yay!`
         };
         break;
+
     case 6:
         today = "Saturday";
         coffee = {
-            color: "brown",
-            name: "Drip",
-            pic: "Images/drip.jpg",
-            alt: "A pic of drip Coffee",
-            desc: `Some days you just need the drip!`
+            color: "Orange",
+            name: "Pumpkin Spice Latte",
+            pic: "Images/pumpkin-spice-latte.jpg",
+            day: "Saturday",
+            alt: "A pic of a Pumpkin Spice Latte",
+            desc: `you can be basic at times!`
         };
         break;
     
     case 7:
         today = "Sunday";
         coffee = {
-            color: "brown",
+            color: "Brown",
             name: "Drip",
             pic: "Images/drip.jpg",
+            day: "Sunday",
             alt: "A pic of drip Coffee",
-            desc: `Some days you just need the drip!`
+            desc: `some days you just need drip!`
         };
         break;
         
@@ -124,8 +132,11 @@ console.log(coffee);
 
 document.getElementById("coffee-output").innerhtml = coffeeTemplate(coffee);
 
-document.getElementById("HTML")[0].style.backgroundColor = coffee.color;
 
-document.getElementById("coffee-highlight").style.color = coffee.color;
+document.getElementsByTagName("HTML")[0].style.backgroundColor = coffee.color;
+
+alert("Your link is working!");
+
+document.getElementById("feature").style.backgroundColor = coffee.color;
 
 alert("Hi, it's " + today);
