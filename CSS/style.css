@@ -43,3 +43,13 @@ nav a:hover{
 	text-decoration: none;
 }	
 
+h3{
+	text-align: center;
+	
+}
+#quotes{
+	font-style: italic;
+	font-size: medium;
+	text-align: center;
+}
+
